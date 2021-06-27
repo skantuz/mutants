@@ -1,0 +1,19 @@
+rootProject.name = 'mutants-magneto'
+
+include 'api'
+
+//domain
+include ':model',':usecase'
+project(':model').projectDir = file('./domain/model')
+project(':usecase').projectDir = file('./domain/usecase')
+
+//driven-adapter 
+include ':identify-mutants'
+project(':identify-mutants').projectDir = file('./driven_adapters/identify_mutants')
+
+//entry-points
+include ':api-rest'
+project(':api-rest').projectDir = file('./entry_points/api_rest')
+
+
+//helpers

@@ -1,0 +1,17 @@
+buildscript {
+    ext {
+        projectReactorVersion = '3.4.7'
+        springBootVersion = '2.5.1'
+        springDependencyManagement = '1.0.11.RELEASE'
+        lombokVersion = '1.18.16'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.skantuz.mutants'
+version '1.0'
+
+apply from: './main.gradle'

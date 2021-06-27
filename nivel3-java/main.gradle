@@ -1,0 +1,21 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+subprojects{
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+
+    dependencies{
+        testImplementation "io.projectreactor:reactor-test:${projectReactorVersion}"
+        testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+    }
+
+    test{
+        useJUnitPlatform()
+    }
+}

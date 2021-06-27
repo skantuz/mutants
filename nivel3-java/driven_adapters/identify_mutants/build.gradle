@@ -1,0 +1,6 @@
+dependencies{
+    implementation project(':model')
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}

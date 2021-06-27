@@ -1,0 +1,12 @@
+dependencies{
+    implementation project(':model')
+    implementation project(':usecase')
+    
+    //entry-points
+    implementation project(':api-rest')
+
+    //driven-adapters
+    implementation project(':identify-mutants')
+
+    //dependencies-project
+}

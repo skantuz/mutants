@@ -1,12 +1,19 @@
-dependencies{
+plugins {
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version "${springDependencyManagement}"
+}
+dependencies {
     implementation project(':model')
     implementation project(':usecase')
-    
+
     //entry-points
     implementation project(':api-rest')
 
     //driven-adapters
     implementation project(':identify-mutants')
+    implementation project(':mongodb-mutants')
 
     //dependencies-project
+    implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${springDataMongo}"
 }

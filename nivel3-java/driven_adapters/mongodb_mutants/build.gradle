@@ -1,0 +1,10 @@
+dependencies{
+    implementation project(':model')
+    implementation project(':repository')
+
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${springDataMongo}"
+    implementation "io.projectreactor:reactor-core:${projectReactorVersion}"
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}

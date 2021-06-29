@@ -1,0 +1,17 @@
+##spring Properties profile Local
+server:
+  port: 8080
+  servlet:
+    application-display-name: Mutants
+json:
+  schemas:
+    file: mutant_schema.json
+logging:
+  level:
+    com.skantuz.mutants: debug
+    root: info
+spring:
+  data:
+    mongodb:
+      database: bezkoder_db
+      port: 7017

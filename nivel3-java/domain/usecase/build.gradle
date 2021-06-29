@@ -1,3 +1,5 @@
 dependencies{
     implementation project(':model')
+    implementation project(':repository')
+    implementation "io.projectreactor:reactor-core:${projectReactorVersion}"
 }

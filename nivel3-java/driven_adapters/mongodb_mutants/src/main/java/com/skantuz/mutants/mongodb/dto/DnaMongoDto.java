@@ -1,4 +1,4 @@
-package com.skantuz.mutants.mongodb_mutants.dto;
+package com.skantuz.mutants.mongodb.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

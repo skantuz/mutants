@@ -1,8 +1,8 @@
 package com.skantuz.mutants.usecase;
 
 import com.skantuz.mutants.model.stats.Stats;
-import com.skantuz.mutants.repository.StatsRepository;
 import com.skantuz.mutants.usecase.provider.StatsProvider;
+import com.skantuz.mutants.repository.StatsRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

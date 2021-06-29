@@ -4,15 +4,14 @@ buildscript {
         projectReactorVersion = '3.4.7'
         springBootVersion = '2.5.1'
         springDependencyManagement = '1.0.11.RELEASE'
-        springDataMongo = '2.5.2'
         lombokVersion = '1.18.16'
         jsonSchemaValidator = '2.2.14'
-
     }
 }
 
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.skantuz.mutants'

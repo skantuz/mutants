@@ -2,8 +2,6 @@ package com.skantuz.mutants.usecase.provider;
 
 import com.skantuz.mutants.model.dna.Dna;
 
-import java.util.Arrays;
-
 public class DnaProvider {
 
     public static Dna getDna(){

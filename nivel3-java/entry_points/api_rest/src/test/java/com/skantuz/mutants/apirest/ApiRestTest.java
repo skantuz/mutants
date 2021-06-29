@@ -1,18 +1,17 @@
 package com.skantuz.mutants.apirest;
 
 import com.skantuz.mutants.apirest.provider.BodyProvider;
-import com.skantuz.mutants.apirest.provider.DnaProvider;
 import com.skantuz.mutants.apirest.provider.StatsProvider;
+import com.skantuz.mutants.usecase.StatsUseCase;
+import com.skantuz.mutants.apirest.provider.DnaProvider;
 import com.skantuz.mutants.apirest.util.JsonSchemaValidator;
 import com.skantuz.mutants.usecase.DnaUseCase;
-import com.skantuz.mutants.usecase.StatsUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;

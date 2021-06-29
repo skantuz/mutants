@@ -1,8 +1,9 @@
-package com.skantuz.mutants.mongodb_mutants;
+package com.skantuz.mutants.mongodb;
 
-import com.skantuz.mutants.mongodb_mutants.provider.DnaMongoDtoProvider;
-import com.skantuz.mutants.mongodb_mutants.provider.DnaProvider;
-import com.skantuz.mutants.mongodb_mutants.repository.DnaMongoRepository;
+import com.skantuz.mutants.mongodb.provider.DnaMongoDtoProvider;
+import com.skantuz.mutants.mongodb.provider.DnaProvider;
+import com.skantuz.mutants.mongodb.repository.DnaMongoRepository;
+import com.skantuz.mutants.mongodb.service.DnaMongoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -23,7 +24,8 @@ class MongoDbSaveServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        mongoDbSaveService=new MongoDbSaveService(dnaMongoRepository);
+        var dnaMongoService = new DnaMongoService(dnaMongoRepository);
+        mongoDbSaveService=new MongoDbSaveService(dnaMongoService);
     }
 
     @Test

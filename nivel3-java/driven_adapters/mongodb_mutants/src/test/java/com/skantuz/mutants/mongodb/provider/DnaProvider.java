@@ -1,4 +1,4 @@
-package com.skantuz.mutants.mongodb_mutants.provider;
+package com.skantuz.mutants.mongodb.provider;
 
 import com.skantuz.mutants.model.dna.Dna;
 

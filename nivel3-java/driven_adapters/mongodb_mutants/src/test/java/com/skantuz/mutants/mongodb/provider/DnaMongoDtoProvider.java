@@ -1,6 +1,6 @@
-package com.skantuz.mutants.mongodb_mutants.provider;
+package com.skantuz.mutants.mongodb.provider;
 
-import com.skantuz.mutants.mongodb_mutants.dto.DnaMongoDto;
+import com.skantuz.mutants.mongodb.dto.DnaMongoDto;
 
 public class DnaMongoDtoProvider {
     public static DnaMongoDto getDnaMongoDto(){

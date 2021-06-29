@@ -1,10 +1,20 @@
+plugins {
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version "${springDependencyManagement}"
+    id 'java'
+}
 dependencies{
     implementation project(':model')
     implementation project(':repository')
 
-    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${springDataMongo}"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
+    implementation 'org.mongodb:mongodb-driver-reactivestreams'
     implementation "io.projectreactor:reactor-core:${projectReactorVersion}"
 
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}
+
+springBoot{
+    mainClassName('com.skantuz.mutants.MainApplication')
 }

@@ -1,7 +1,7 @@
-package com.skantuz.mutants.mongodb_mutants.mapper;
+package com.skantuz.mutants.mongodb.mapper;
 
+import com.skantuz.mutants.mongodb.dto.DnaMongoDto;
 import com.skantuz.mutants.model.dna.Dna;
-import com.skantuz.mutants.mongodb_mutants.dto.DnaMongoDto;
 
 public class DnaMongoDtoMapper {
 

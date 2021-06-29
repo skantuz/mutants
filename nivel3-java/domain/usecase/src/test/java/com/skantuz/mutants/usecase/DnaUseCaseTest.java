@@ -1,13 +1,12 @@
 package com.skantuz.mutants.usecase;
 
+import com.skantuz.mutants.usecase.provider.DnaProvider;
 import com.skantuz.mutants.repository.SaveDnaRepository;
 import com.skantuz.mutants.repository.ValidateMutantsRepository;
-import com.skantuz.mutants.usecase.provider.DnaProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 

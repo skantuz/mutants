@@ -5,8 +5,6 @@ import com.skantuz.mutants.model.config.MutantsErrorCode;
 import com.skantuz.mutants.model.config.MutantsException;
 import com.skantuz.mutants.model.dna.Dna;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 public class DnaMapper {

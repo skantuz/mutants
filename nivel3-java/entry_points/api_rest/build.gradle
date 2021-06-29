@@ -12,3 +12,7 @@ dependencies{
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
 }
+
+springBoot{
+    mainClassName('com.skantuz.mutants.MainApplication')
+}

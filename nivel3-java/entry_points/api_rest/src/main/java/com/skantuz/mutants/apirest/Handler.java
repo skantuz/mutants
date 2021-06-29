@@ -2,13 +2,13 @@ package com.skantuz.mutants.apirest;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.skantuz.mutants.apirest.dto.StatsDto;
+import com.skantuz.mutants.model.config.MutantsException;
+import com.skantuz.mutants.usecase.StatsUseCase;
 import com.skantuz.mutants.apirest.mapper.DnaMapper;
 import com.skantuz.mutants.apirest.util.JsonSchemaValidator;
 import com.skantuz.mutants.model.config.MutantsErrorCode;
-import com.skantuz.mutants.model.config.MutantsException;
 import com.skantuz.mutants.model.dna.Dna;
 import com.skantuz.mutants.usecase.DnaUseCase;
-import com.skantuz.mutants.usecase.StatsUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;

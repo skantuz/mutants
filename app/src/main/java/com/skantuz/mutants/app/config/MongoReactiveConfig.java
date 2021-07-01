@@ -13,12 +13,16 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 @EnableReactiveMongoRepositories(basePackages = "com.skantuz.mutants.mongodb.repository")
 public class MongoReactiveConfig extends AbstractReactiveMongoConfiguration {
 
+    @Value("${spring.data.mongodb.port}")
+    private String port;
     @Value("${spring.data.mongodb.host}")
+    private String host;
+    @Value("${spring.data.mongodb.database}")
     private String dataBase;
 
     @Override
     public MongoClient reactiveMongoClient() {
-        return MongoClients.create();
+        return MongoClients.create("mongodb://"+host+":"+port);
     }
 
     @Override

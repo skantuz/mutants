@@ -1,10 +1,9 @@
 @ECHO OFF
 mode 120,50
-Excho limpiando versiones anteriores
-docker rm mutants-api
-docker rm mongodb
-docker image rm deployment_mutants-api
-docker volume rm mongodb
+ECHO limpiando versiones anteriores
+docker rm mutants_api
+docker rm mutants_mongodb
+docker image rm deployment_mutants_api
 del .\deployment\app.jar
 call .\gradlew clean
 ECHO compilando
@@ -17,8 +16,7 @@ ECHO Desplegando contenedores api y mongo
 docker-compose up
 ECHO Eliminando deployment
 cd ..
-docker rm mutants-api
-docker rm mongodb
-docker image rm deployment_mutants-api
-docker volume rm mongodb
+docker rm mutants_api
+docker rm mutants_mongodb
+docker image rm deployment_mutants_api
 del .\deployment\app.jar

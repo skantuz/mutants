@@ -5,8 +5,7 @@ server:
     application-display-name: Mutants
 json:
   schemas:
-    file: mutant_schema.json
-    dir: c:\java\mutants\deployment\
+    file: c:\java\mutants\deployment\mutant_schema.json
 logging:
   level:
     com.skantuz.mutants: debug

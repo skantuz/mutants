@@ -22,11 +22,10 @@ public class JsonSchemaConfig {
      * @return JsonSchemaValidator -- Validate Body in JsonNode
      */
     @Bean
-    public JsonSchemaValidator jsonSchemaSubscription(@Value("${json.schemas.dir}") String dir,
-                                                      @Value("${json.schemas.file}") String schema) {
+    public JsonSchemaValidator jsonSchemaSubscription(@Value("${json.schemas.file}") String schema) {
         JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
         try {
-            JsonNode jsonSchemaNode = JsonLoader.fromFile(new File(dir+schema));
+            JsonNode jsonSchemaNode = JsonLoader.fromFile(new File(schema));
             return new JsonSchemaValidator(factory.getJsonSchema(jsonSchemaNode));
         } catch (IOException | ProcessingException e1) {
             throw new BeanCreationException("Ensure that the json schema resource is in: " + schema,e1.getMessage());

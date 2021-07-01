@@ -1,21 +1,20 @@
-version: "3.8"
+version: "3.7"
 services:
-  mutants-api:
+  mutants_mongodb:
+    container_name: mutants_mongodb
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - ./mongodb/db:/data/db
+      - ./mongodb/configdb:/data/configdb
+    ports:
+      - "27017:27017"
+  mutants_api:
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - 8091:8091
-    volumes:
-      - ./config:/app/config
-    container_name: mutants-api
-  mongodb:
-    image : mongo
-    container_name: mongodb
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - ./mongodb:/data/db
-    ports:
-      - 27017:27017
+      - "8091:8091"
+    container_name: mutants_api
+    links:
+      - mutants_mongodb

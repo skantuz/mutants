@@ -1,0 +1,4 @@
+plugins {
+    id 'com.skantuz.mutants.java-common-conventions'
+    id 'java-library'
+}

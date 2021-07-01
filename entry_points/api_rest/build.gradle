@@ -1,0 +1,17 @@
+plugins{
+    id 'com.skantuz.mutants.java-application-conventions'
+    id 'org.springframework.boot' version '2.5.1'
+}
+dependencies{
+    implementation project(':model')
+    implementation project(':usecase')
+
+    implementation "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    implementation "com.github.java-json-tools:json-schema-validator:${jsonSchemaValidator}"
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}
+springBoot {
+    mainClass.set('com.skantuz.mutants.app.App')
+}

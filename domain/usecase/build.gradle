@@ -1,0 +1,8 @@
+plugins{
+    id 'com.skantuz.mutants.java-application-conventions'
+}
+dependencies{
+    implementation project(':model')
+    implementation project(':repository')
+    implementation "io.projectreactor:reactor-core:${projectReactorVersion}"
+}

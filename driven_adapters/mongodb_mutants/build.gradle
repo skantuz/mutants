@@ -1,0 +1,19 @@
+plugins{
+    id 'com.skantuz.mutants.java-application-conventions'
+    id 'org.springframework.boot' version '2.5.1'
+}
+dependencies{
+    implementation project(':model')
+    implementation project(':repository')
+
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${springBootVersion}"
+    implementation "org.mongodb:mongodb-driver-reactivestreams:${mongodbDriverReactivestreams}"
+    implementation "io.projectreactor:reactor-core:${projectReactorVersion}"
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+
+}
+springBoot {
+    mainClass.set('com.skantuz.mutants.app.App')
+}

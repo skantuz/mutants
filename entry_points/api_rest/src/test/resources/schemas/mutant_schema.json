@@ -1,0 +1,23 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Mutants json schema",
+  "additionalProperties": false,
+  "required": [
+    "dna"
+  ],
+  "properties": {
+    "dna":{
+      "type": "array",
+      "title": "Dna Secuency",
+      "default": null,
+      "minItems": 1,
+      "items":{
+        "type": "string",
+        "pattern": "^[ATCG]{1,}$"
+      }
+    }
+
+  }
+}

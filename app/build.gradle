@@ -1,0 +1,50 @@
+plugins {
+    id 'com.skantuz.mutants.java-application-conventions'
+    id 'org.springframework.boot' version '2.5.1'
+}
+
+dependencies {
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation project(':repository')
+
+    //entry-points
+    implementation project(':api-rest')
+
+    //driven-adapters
+    implementation project(':identify-mutants')
+    implementation project(':mongodb-mutants')
+
+    //dependencies-projects
+    implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${springBootVersion}"
+    implementation "org.mongodb:mongodb-driver-reactivestreams:${mongodbDriverReactivestreams}"
+    implementation "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    implementation "com.github.java-json-tools:json-schema-validator:${jsonSchemaValidator}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}
+springBoot {
+    mainClass.set('com.skantuz.mutants.app.App')
+}
+task jacocoMergedReport(type: JacocoReport) {
+    dependsOn = subprojects.jacocoTestReport
+    additionalSourceDirs.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories.setFrom files(subprojects.sourceSets.main.output)
+    subprojects.forEach(subproject -> getExecutionData()
+            .from(fileTree(subproject.buildDir()).include('/jacoco/*.exec')))
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.enabled true
+    }
+}
+
+tasks.register('deploy'){
+    dependencies {
+        clean
+        build
+    }
+    println('ok')
+}

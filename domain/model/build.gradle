@@ -1,0 +1,3 @@
+plugins{
+    id 'com.skantuz.mutants.java-application-conventions'
+}

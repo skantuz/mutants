@@ -1,0 +1,11 @@
+plugins{
+    id 'com.skantuz.mutants.java-application-conventions'
+}
+
+dependencies{
+    implementation project(':model')
+    implementation project(':repository')
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
+}

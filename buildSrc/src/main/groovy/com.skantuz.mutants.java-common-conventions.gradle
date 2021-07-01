@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+project.ext{
+    //versiones de librerias y frameworks
+    springBootVersion = '2.5.1'
+    projectReactorVersion = '3.4.7'
+    lombokVersion = '1.18.16'
+    jsonSchemaValidator = '2.2.14'
+    mongodbDriverReactivestreams='4.2.3'
+    jacocoVersion = '0.8.6'
+}
+dependencies {
+    testImplementation "io.projectreactor:reactor-test:${projectReactorVersion}"
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+test{
+    reports.html.enabled(true)
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco.xml")
+        csv.required = false
+        html.destination file("${buildDir}/reports/jacocoHtml")
+    }
+}
+jacoco {
+    toolVersion = "${jacocoVersion}"
+    reportsDir = file("$buildDir/reports")
+}
+

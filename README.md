@@ -1,5 +1,5 @@
 # Mutants - Validation
-Para desplegar el servicio se requiere docker y  docker-compose, se debe ejecutar segun el sistema operativo
+Para desplegar el servicio se requiere docker y docker-compose, se debe ejecutar según el sistema operativo
 
 ####windows
 ```sh
@@ -21,7 +21,7 @@ docker-compose up
 
 ##Descripcion del Servicio
 
-Aplicacion desarrollada en java 11 con gradle 7.1 con sub projectos para diseño en arquitectura limpia
+Aplicación desarrollada en java 11 con gradle 7.1 con sub proyectos para diseño en arquitectura limpia
 
 ###estructura de carpetas
 ```
@@ -47,5 +47,4 @@ Aplicacion desarrollada en java 11 con gradle 7.1 con sub projectos para diseño
  │ └─📂mongodb_mutants   // almacena en base de datos mongodb y consulta 
  └─📂entry-points     // puntos de entra a la app
    └─📂api_rest       //subcomponente de api rest
-    
 ```
